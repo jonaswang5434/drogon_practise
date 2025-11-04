@@ -8,3 +8,10 @@
 里面的 void(const HttpResponsePtr &) 表示这个函数对象：<br>
 * 接收一个参数：const HttpResponsePtr &
 * 返回类型是 void
+
+
+# 模板继承
+`class User : public drogon::HttpController<User>` <br>
+> User 是继承drogon::HttpCOntroller的,但是可以把User 作为模板参数传递给基类,让基类在编译时知道派生类的类型,好处:<br>
+* 减少虚函数开销,
+* 框架注册路由时可以用User的派生类生成控制器对象.
