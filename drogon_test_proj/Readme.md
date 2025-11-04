@@ -30,7 +30,8 @@ void getInfo(const HttpRequestPtr &req,
              const std::string &token) const; /* 对应第2个参数*/
 ```
 
-# ADD_METHOD:会在url中匹配namespace,ADD_METHOD_TO不会在url添加namespace <br>
+### METHOD_ADD:会在url中匹配namespace 
+### ADD_METHOD_TO不会在url添加namespace,且可以用在`METHOD_LIST_BEGIN…METHOD_LIST_END`外部 <br>
 * METHOD_ADD(User::login,"/token?userId={1}&passwd={2}",Post); <br>
 > url shoul be :http://localhost/demo/v1/user/token?userid=xxx&passwd=xxx
 * ADD_METHOD_TO(User::login,"/token?userId={1}&passwd={2}",Post); <br>
