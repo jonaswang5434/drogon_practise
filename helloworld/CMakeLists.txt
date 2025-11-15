@@ -49,8 +49,9 @@ aux_source_directory(filters FILTER_SRC)
 aux_source_directory(plugins PLUGIN_SRC)
 aux_source_directory(models MODEL_SRC)
 aux_source_directory(services SERVICES_SRC)
+aux_source_directory(middlewares MIDDLEWARES_SRC)
 set(SRC_FILES main.cc)
-add_executable(${PROJECT_NAME} ${SRC_FILES} ${CTL_SRC} ${FILTER_SRC} 
+add_executable(${PROJECT_NAME} ${SRC_FILES} ${CTL_SRC} ${FILTER_SRC} ${MIDDLEWARES_SRC}
 ${PLUGIN_SRC} ${MODEL_SRC} ${SERVICES_SRC})
 
 
@@ -71,7 +72,8 @@ target_include_directories(${PROJECT_NAME}
                            PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
                                    ${CMAKE_CURRENT_SOURCE_DIR}/models                                   
                                    ${CMAKE_CURRENT_SOURCE_DIR}/controllers
-                                   ${CMAKE_CURRENT_SOURCE_DIR}/services)
+                                   ${CMAKE_CURRENT_SOURCE_DIR}/services
+                                   ${CMAKE_CURRENT_SOURCE_DIR}/middlewares)
 # target_sources(${PROJECT_NAME}
 #                PRIVATE               
 #                ${CTL_SRC}

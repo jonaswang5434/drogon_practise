@@ -48,3 +48,47 @@ staticFunc();           // ❌ 不能直接调用（除非 using namespace 或�
 orm::DbClientPtr getDbClient(const std::string &name = "postgre_prod"); <br>
 
 > name is the value of the name configuration option in the configuration file to distinguish multiple different DbClient objects of the same application.
+
+### Filter vs middleware
+
+Filter 是“拦截器”，Middleware 是“管道工具”。
+
+Filter：用于 控制访问（鉴权、限制访问、检查参数）。
+
+Middleware：用于 处理请求生命周期（日志、统计、统一前后处理）。
+
+⭐ 核心区别（一句话看懂）
+
+Filter 是专门用来 决定请求能不能进入 Controller 的。
+
+典型用途：
+> JWT 鉴权<br>
+> 检查 Headers<br>
+> 检查参数是否合法<br>
+> 限流<br>
+> 黑名单拦截<br>
+
+⭐ Middleware：贯穿整个请求链的处理器
+
+Middleware 是对 request 和 response 的“包裹”。
+
+进入 → 前置处理 → controller → 后置处理 → 返回
+
+典型用途：
+> 请求日志<br>
+> 响应日志<br>
+> 统计请求耗时<br>
+> 注入全局变量<br>
+> 统一错误处理<br>
+
+⭐ 谁更早执行？
+
+顺序如下：
+
+Middleware（前）<br>
+↓<br>
+Filter<br>
+↓<br>
+Controller<br>
+↓<br>
+Middleware（后）

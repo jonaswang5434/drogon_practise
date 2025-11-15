@@ -8,12 +8,13 @@
 
 #include <drogon/drogon.h>
 #include <controllers/HelloController.h>
+#include <middlewares/LoginMiddleware.h>
 using namespace drogon;
 
 int main()
 
 {
-
+    drogon::app().registerMiddleware<LoginMiddleware>();
     drogon::app().loadConfigFile("../config.yaml");
     app().registerHandler(
         "/",
