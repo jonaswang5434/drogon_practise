@@ -39,3 +39,44 @@ clientPtr->execSqlAsync("select * from users where org_name=$1",
                             },
                             "default");
 ```
+
+### Lvalue Reference vs Rvalue Reference
+```
+LValue reference:
+int a = 10;
+int& r = a;
+
+RValue reference:
+int&& r = 10;
+```
+* 右值引用能触发移动语义（move semantics）
+
+std::vector<int> v; <br>
+v.push_back(std::vector<int>{1,2,3}); //{1,2,3} 是右值，可以触发移动，不会复制 <br>
+* 可以用 std::move 把左值变右值引用
+std::string a = "hello";
+std::string b = std::move(a);  // 移动
+
+* 普通引用不能绑定右值 <br>
+> int& r = 5;   // ❌ 错误 <br>
+* 右值引用不能绑定左值  <br>
+> int a = 5; <br>
+> int&& r = a;  // ❌ 错误
+
+### 总结
+普通引用是“借用”
+
+借现成的对象
+
+不改变所有权
+
+不负责销毁
+
+
+右值引用是“接管”
+
+绑定临时对象
+
+可以拿走资源（移动）
+
+一般与 std::move 一起用
