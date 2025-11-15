@@ -1,0 +1,13 @@
+# ninja log v5
+0	35	1762698416697512906	HelloView.h	7714f761f3cc9304
+0	35	1762698416697512906	HelloView.cc	7714f761f3cc9304
+3489	6134	1762698422774473493	helloworld	894cd1568edd18d2
+0	35	1762698416697512906	/home/jonas/c++/drogon_practise/helloworld/build/HelloView.h	7714f761f3cc9304
+0	35	1762698416697512906	/home/jonas/c++/drogon_practise/helloworld/build/HelloView.cc	7714f761f3cc9304
+36	1327	1762698417980504514	CMakeFiles/helloworld.dir/HelloView.cc.o	4e0bf7d86121bbac
+36	2105	1762698418751499492	CMakeFiles/helloworld.dir/controllers/HelloViewController.cc.o	b3ca7fa8dfc7599e
+36	2300	1762698418948498209	CMakeFiles/helloworld.dir/controllers/demo_v1_User.cc.o	42fc5c0a693321c3
+1	3069	1762698419709493268	test/CMakeFiles/helloworld_test.dir/test_main.cc.o	5f5f4918ca9672b3
+35	3255	1762698419891492087	CMakeFiles/helloworld.dir/main.cc.o	6ce5d3c26008a9b
+35	3489	1762698420133490519	CMakeFiles/helloworld.dir/controllers/HelloController.cc.o	b10502342cef289a
+3069	5688	1762698422330476346	test/helloworld_test	96c23d1ba9d41167
