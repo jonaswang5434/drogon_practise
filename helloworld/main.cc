@@ -14,8 +14,8 @@ using namespace drogon;
 int main()
 
 {
-    drogon::app().registerMiddleware<LoginMiddleware>();
-    drogon::app().loadConfigFile("../config.yaml");
+    // drogon::app().registerMiddleware<LoginMiddleware>();
+    // drogon::app().loadConfigFile("../config.yaml");
     app().registerHandler(
         "/",
         [](const HttpRequestPtr &request,
